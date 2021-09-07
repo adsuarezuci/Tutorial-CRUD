@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\src\\c#\\Projects\\APITest\\APITest.csproj": {}
+    "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\APITest.csproj": {}
   },
   "projects": {
-    "C:\\src\\c#\\Projects\\APITest\\APITest.csproj": {
+    "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\APITest.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\src\\c#\\Projects\\APITest\\APITest.csproj",
+        "projectUniqueName": "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\APITest.csproj",
         "projectName": "APITest",
-        "projectPath": "C:\\src\\c#\\Projects\\APITest\\APITest.csproj",
+        "projectPath": "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\APITest.csproj",
         "packagesPath": "C:\\Users\\aleja\\.nuget\\packages\\",
-        "outputPath": "C:\\src\\c#\\Projects\\APITest\\obj\\",
+        "outputPath": "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aleja\\AppData\\Roaming\\NuGet\\NuGet.Config"

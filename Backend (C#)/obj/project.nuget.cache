@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qlX7LvsnpkDHyD4o+5It2QYPq4ZhedlQt5knCy2Ds3uYsVvfuBiilkWBuVDvvHl1m9Be48UvMSOghL1cY1NSZQ==",
+  "dgSpecHash": "t6V5C1o50aytRqBXUcfvRrKzSjzsrb1E1CjzsBW1s6pq6JGlvE7z7fhFZzFFtjsXYuwIYuE2zkqHdFUQNEYesA==",
   "success": true,
-  "projectFilePath": "C:\\src\\c#\\Projects\\APITest\\APITest.csproj",
+  "projectFilePath": "C:\\src\\Proyectos\\Tutorial-CRUD\\Backend (C#)\\APITest.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

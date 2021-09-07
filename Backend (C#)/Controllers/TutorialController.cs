@@ -30,7 +30,7 @@ namespace APITest.Controllers
         }
 
         [HttpDelete]
-        [Route("delete")]
+        [Route("delete/{id:int}")]
         public IActionResult Delete(int id){
             return Ok(ioGestor.DeleteTutorial(id));
         }
