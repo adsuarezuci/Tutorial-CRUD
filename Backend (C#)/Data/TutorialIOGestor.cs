@@ -21,8 +21,16 @@ namespace APITest.Data
         }
 
         public bool AddTutorial(Tutorial t){
-            var list = GetListFromFile();
-            list.Add(t);
+            try
+            {
+                var list = GetListFromFile();
+                list.Add(t);
+                WriteListToFile(list);
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
             return true;
         }
 
