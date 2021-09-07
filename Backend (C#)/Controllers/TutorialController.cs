@@ -54,7 +54,9 @@ namespace APITest.Controllers
         [HttpGet]
         [Route("")]
         public IActionResult Get(){
-            return Ok(tutorials);
+            var ioGestor = new TutorialIOGestor();
+            var list = ioGestor.getTutorials();
+            return Ok(list);
         }
 
         [HttpPost]

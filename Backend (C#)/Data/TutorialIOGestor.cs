@@ -16,6 +16,7 @@ namespace APITest.Data
             string text = JsonSerializer.Serialize(list);
             File.WriteAllText(fileName,text);
         }
+        
         public List<Tutorial> getTutorials(){
             return GetListFromFile();
         }
@@ -32,6 +33,50 @@ namespace APITest.Data
                 return false;
             }
             return true;
+        }
+
+        public bool DeleteTutorial(int id){
+            try
+            {
+                var auxList = new List<Tutorial>();
+                var list = GetListFromFile();
+                foreach (var item in list)
+                {
+                    if(item.id != id)
+                        auxList.Add(item);
+                }
+                WriteListToFile(auxList);
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public bool ChangeTutorial(Tutorial t){
+            var success = true;
+            try
+            {
+                var auxList = new List<Tutorial>();
+                var list = GetListFromFile();
+                foreach (var item in list)
+                {
+                    if(item.id == t.id)
+                        auxList.Add(t);
+                    else auxList.Add(item);
+                }
+                WriteListToFile(auxList); 
+            }
+            catch (System.Exception)
+            {
+                success = false;
+            }
+            return success;
+        }
+
+        public void DeleteAll(){
+            WriteListToFile(new List<Tutorial>());
         }
 
     }
