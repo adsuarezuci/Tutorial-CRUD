@@ -16,23 +16,32 @@ namespace APITest.Data
             string text = JsonSerializer.Serialize(list);
             File.WriteAllText(fileName,text);
         }
-        
+        private int getLastID(List<Tutorial> list){
+            int aux = 0;
+            foreach (var item in list)
+            {
+                if(item.id > aux) aux = item.id;
+            }
+            return aux;
+        }
+
         public List<Tutorial> getTutorials(){
             return GetListFromFile();
         }
 
-        public bool AddTutorial(Tutorial t){
+        public Tutorial AddTutorial(Tutorial t){
             try
             {
                 var list = GetListFromFile();
+                t.id = getLastID(list);
                 list.Add(t);
                 WriteListToFile(list);
             }
             catch (System.Exception)
             {
-                return false;
+                return null;
             }
-            return true;
+            return t;
         }
 
         public bool DeleteTutorial(int id){
@@ -46,16 +55,16 @@ namespace APITest.Data
                         auxList.Add(item);
                 }
                 WriteListToFile(auxList);
+                return true;
             }
             catch (System.Exception)
             {
                 return false;
             }
-            return true;
         }
 
         public bool ChangeTutorial(Tutorial t){
-            var success = true;
+            var success = false;
             try
             {
                 var auxList = new List<Tutorial>();
@@ -63,7 +72,10 @@ namespace APITest.Data
                 foreach (var item in list)
                 {
                     if(item.id == t.id)
+                    {
                         auxList.Add(t);
+                        success = true;
+                    }
                     else auxList.Add(item);
                 }
                 WriteListToFile(auxList); 
@@ -75,8 +87,16 @@ namespace APITest.Data
             return success;
         }
 
-        public void DeleteAll(){
-            WriteListToFile(new List<Tutorial>());
+        public bool DeleteAll(){
+            try
+            {
+                WriteListToFile(new List<Tutorial>());
+                return true;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
         }
 
     }
