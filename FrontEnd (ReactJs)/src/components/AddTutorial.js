@@ -4,7 +4,7 @@ import TutorialDataService from "../services/TutorialService";
 
 const AddTutorial = () => {
   const initialTutorialState = {
-    id: null,
+    id: 0,
     title: "",
     description: "",
     published: false

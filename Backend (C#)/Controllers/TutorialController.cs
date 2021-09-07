@@ -23,6 +23,16 @@ namespace APITest.Controllers
             return Ok(list);
         }
 
+        [HttpGet]
+        [Route("{id:int}")]
+        public IActionResult Get(int id){
+            var t = ioGestor.getTutorial(id);
+            if (t == null)
+                return Ok(false);
+            else
+                return Ok(t);
+        }
+
         [HttpPost]
         [Route("add")]
         public IActionResult Post(Tutorial t){

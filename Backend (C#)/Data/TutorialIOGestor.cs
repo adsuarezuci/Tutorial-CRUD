@@ -29,6 +29,18 @@ namespace APITest.Data
             return GetListFromFile();
         }
 
+        public Tutorial getTutorial(int id){
+            var list = GetListFromFile();
+            foreach (var item in list)
+            {
+                if (item.id == id)
+                {
+                    return item;
+                }
+            }
+            return null;
+        }
+
         public Tutorial AddTutorial(Tutorial t){
             try
             {
