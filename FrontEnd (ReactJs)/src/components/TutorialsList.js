@@ -49,6 +49,16 @@ const TutorialsList = () => {
         console.log(e);
       });
   };
+  const removeTutorialSelected = () => {
+    TutorialDataService.remove(currentTutorial.id)
+      .then(response => {
+        console.log(response.data);
+        refreshList();
+      })
+      .catch(e => {
+        console.log(e);
+      });
+  };
 
   const findByTitle = () => {
     TutorialDataService.findByTitle(searchTitle)
@@ -72,6 +82,7 @@ const TutorialsList = () => {
             value={searchTitle}
             onChange={onChangeSearchTitle}
           />
+          <div >&nbsp; &nbsp; </div>
           <div className="input-group-append">
             <button
               className="btn btn-outline-secondary"
@@ -133,10 +144,16 @@ const TutorialsList = () => {
 
             <Link
               to={"/tutorials/" + currentTutorial.id}
-              className="badge badge-warning"
+              className="m-3 btn btn-sm btn-primary"
             >
               Edit
             </Link>
+            <button
+              className="m-3 btn btn-sm btn-danger"
+              onClick={removeTutorialSelected}
+            >
+              Delete
+            </button>
           </div>
         ) : (
           <div>

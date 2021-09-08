@@ -22,7 +22,7 @@ namespace APITest.Data
             {
                 if(item.id > aux) aux = item.id;
             }
-            return aux;
+            return aux+1;
         }
 
         public List<Tutorial> getTutorials(){

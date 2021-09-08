@@ -17,7 +17,7 @@ const getAll = () => {
   };
   
   const remove = id => {
-    return http.delete(`/tutorial/${id}`);
+    return http.delete(`/tutorial/delete/${id}`);
   };
   
   const removeAll = () => {
