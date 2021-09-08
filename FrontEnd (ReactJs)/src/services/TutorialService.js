@@ -25,7 +25,7 @@ const getAll = () => {
   };
   
   const findByTitle = title => {
-    return http.get(`/tutorial?title=${title}`);
+    return http.get(`/tutorial/findbytitle?title=${title}`);
   };
   
   export default {

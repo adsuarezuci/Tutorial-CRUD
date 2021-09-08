@@ -57,6 +57,11 @@ namespace APITest.Controllers
             return Ok(ioGestor.ChangeTutorial(t));
         }
 
+        [HttpGet]
+        [Route("findbytitle")]
+        public IActionResult FindByTitle(string title){
+            return Ok(ioGestor.findAllByTitle(title));
+        }
 
     }
 }

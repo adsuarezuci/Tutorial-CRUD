@@ -111,5 +111,15 @@ namespace APITest.Data
             }
         }
 
+        public List<Tutorial> findAllByTitle(string title){
+            var list  = new List<Tutorial>();
+            var tutorials = GetListFromFile();
+            if(title == "") return tutorials;
+            foreach (var item in tutorials)
+            {
+                if(item.title.ToLower().Contains(title.ToLower())) list.Add(item);
+            }
+            return list;
+        }
     }
 }

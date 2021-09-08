@@ -61,7 +61,11 @@ const TutorialsList = () => {
   };
 
   const findByTitle = () => {
-    TutorialDataService.findByTitle(searchTitle)
+    if(searchTitle == ''){
+      retrieveTutorials();
+    }
+    else{
+      TutorialDataService.findByTitle(searchTitle)
       .then(response => {
         setTutorials(response.data);
         console.log(response.data);
@@ -69,6 +73,7 @@ const TutorialsList = () => {
       .catch(e => {
         console.log(e);
       });
+    }
   };
 
   return (
